@@ -1,0 +1,558 @@
+{
+	"version": 1,
+	"allow_edit": true,
+	"plugins": [],
+	"panes": [
+		{
+			"title": "Location",
+			"width": 1,
+			"row": {
+				"2": 1,
+				"3": 1,
+				"4": 1
+			},
+			"col": {
+				"2": 1,
+				"3": 2,
+				"4": 2
+			},
+			"col_width": 2,
+			"widgets": [
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "",
+						"size": "regular",
+						"value": "datasources[\"location\"][\"displayAddress\"]",
+						"animate": true
+					}
+				}
+			]
+		},
+		{
+			"title": "Datetime",
+			"width": 1,
+			"row": {
+				"2": 5,
+				"3": 1,
+				"4": 1
+			},
+			"col": {
+				"2": 1,
+				"3": 1,
+				"4": 1
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "",
+						"size": "regular",
+						"value": "datasources[\"datetime\"]",
+						"animate": true
+					}
+				}
+			]
+		},
+		{
+			"title": "Services info",
+			"width": 1,
+			"row": {
+				"2": 5,
+				"3": 5,
+				"4": 19
+			},
+			"col": {
+				"2": 2,
+				"3": 3,
+				"4": 4
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "",
+						"size": "regular",
+						"value": "datasources[\"sermon-allok\"][\"title\"]",
+						"animate": true
+					}
+				}
+			]
+		},
+		{
+			"title": "System info",
+			"width": 1,
+			"row": {
+				"2": 9,
+				"3": 5,
+				"4": 5
+			},
+			"col": {
+				"2": 2,
+				"3": 2,
+				"4": 4
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "highcharts-timeseries",
+					"settings": {
+						"timeframe": 600,
+						"blocks": 4,
+						"chartType": "area",
+						"title": "",
+						"xaxis": "{\"title\":{\"text\" : \"Time\"}, \"type\": \"datetime\", \"floor\":0}",
+						"yaxis": "{\"title\":{\"text\" : \"%\"}, \"minorTickInterval\":\"auto\", \"floor\":0}",
+						"series1": "datasources[\"system-usage\"][\"memUsage\"]",
+						"series1label": "Memory",
+						"series2": "datasources[\"system-usage\"][\"cpuUsage\"]",
+						"series2label": "CPU"
+					}
+				},
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Disk usage",
+						"size": "regular",
+						"value": "datasources[\"system-usage\"][\"diskUsage\"]",
+						"animate": true,
+						"units": "%"
+					}
+				},
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Updates",
+						"size": "regular",
+						"value": "datasources[\"system-updates\"][\"packagesCount\"] +\" \"",
+						"animate": true,
+						"units": "packages"
+					}
+				}
+			]
+		},
+		{
+			"title": "IP Addreess",
+			"width": 1,
+			"row": {
+				"2": 27,
+				"3": 5,
+				"4": 1
+			},
+			"col": {
+				"2": 1,
+				"3": 1,
+				"4": 4
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "",
+						"size": "regular",
+						"value": "datasources[\"system-network\"][\"ipAddress\"]",
+						"animate": true
+					}
+				}
+			]
+		},
+		{
+			"title": "Outdoor",
+			"width": 1,
+			"row": {
+				"2": 9,
+				"3": 9,
+				"4": 5,
+				"5": 5,
+				"6": 5
+			},
+			"col": {
+				"2": 1,
+				"3": 1,
+				"4": 2,
+				"5": 4,
+				"6": 5
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Sun time",
+						"size": "regular",
+						"value": "datasources[\"weather-current\"][\"sunTime\"]",
+						"animate": true
+					}
+				},
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Temperature",
+						"size": "regular",
+						"value": "datasources[\"weatherhub-newest\"][\"sensors\"][1][\"temperature\"]",
+						"animate": true,
+						"units": "°C"
+					}
+				},
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Humidity",
+						"size": "regular",
+						"value": "datasources[\"weatherhub-newest\"][\"sensors\"][0][\"humidity\"]",
+						"animate": true,
+						"units": "%"
+					}
+				},
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Pressure",
+						"size": "regular",
+						"value": "datasources[\"weather-current\"][\"pressure\"]",
+						"animate": true,
+						"units": "hPa"
+					}
+				},
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Wind speed",
+						"size": "regular",
+						"value": "datasources[\"weather-current\"][\"windSpeed\"]",
+						"sparkline": false,
+						"animate": true,
+						"units": "m/s"
+					}
+				}
+			]
+		},
+		{
+			"title": "Forecast",
+			"width": 1,
+			"row": {
+				"2": 23,
+				"3": 9,
+				"4": 5,
+				"5": 5,
+				"6": 5
+			},
+			"col": {
+				"2": 2,
+				"3": 3,
+				"4": 3,
+				"5": 5,
+				"6": 6
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Day",
+						"size": "regular",
+						"value": "datasources[\"weather-forecast\"][\"date\"]",
+						"animate": true
+					}
+				},
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Overview",
+						"size": "regular",
+						"value": "datasources[\"weather-forecast\"][\"caption\"]",
+						"animate": true
+					}
+				},
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Sun time",
+						"size": "regular",
+						"value": "datasources[\"weather-forecast\"][\"sunTime\"]",
+						"animate": true
+					}
+				},
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Temperature (min / max)",
+						"size": "regular",
+						"value": "datasources[\"weather-forecast\"][\"realTempMinMax\"]",
+						"animate": true,
+						"units": "°C"
+					}
+				},
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Temperature",
+						"size": "regular",
+						"value": "datasources[\"weather-forecast\"][\"realTemp\"]",
+						"animate": true,
+						"units": "°C"
+					}
+				},
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Probability of precipitation",
+						"size": "regular",
+						"value": "datasources[\"weather-forecast\"][\"pop\"] + \" \"",
+						"animate": true,
+						"units": "%"
+					}
+				},
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Rain / Snow",
+						"size": "regular",
+						"value": "datasources[\"weather-forecast\"][\"rainAndSnow\"]",
+						"animate": true,
+						"units": "mm"
+					}
+				},
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Wind speed",
+						"size": "regular",
+						"value": "datasources[\"weather-forecast\"][\"windSpeed\"]",
+						"animate": true,
+						"units": "m/s"
+					}
+				}
+			]
+		},
+		{
+			"title": "Current HDO",
+			"width": 1,
+			"row": {
+				"2": 31,
+				"3": 19,
+				"4": 19,
+				"5": 5,
+				"6": 5
+			},
+			"col": {
+				"2": 1,
+				"3": 2,
+				"4": 1,
+				"5": 3,
+				"6": 4
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "text_widget",
+					"settings": {
+						"size": "regular",
+						"value": "datasources[\"hdo\"][\"current\"]",
+						"animate": true
+					}
+				}
+			]
+		},
+		{
+			"title": "Today HDO NT",
+			"width": 1,
+			"row": {
+				"2": 35,
+				"3": 23,
+				"4": 17,
+				"5": 9,
+				"6": 9
+			},
+			"col": {
+				"2": 1,
+				"3": 2,
+				"4": 2,
+				"5": 3,
+				"6": 4
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "text_widget",
+					"settings": {
+						"size": "regular",
+						"value": "datasources[\"hdo\"][\"times\"][0]",
+						"animate": true
+					}
+				},
+				{
+					"type": "text_widget",
+					"settings": {
+						"size": "regular",
+						"value": "datasources[\"hdo\"][\"times\"][1]",
+						"animate": true
+					}
+				}
+			]
+		},
+		{
+			"title": "Indoor",
+			"width": 1,
+			"row": {
+				"2": 41,
+				"3": 29,
+				"4": 5,
+				"5": 25
+			},
+			"col": {
+				"2": 1,
+				"3": 2,
+				"4": 1,
+				"5": 1
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "horizontal-linear-gauge",
+					"settings": {
+						"title": "Temperature",
+						"value": "datasources[\"weatherhub-newest-average\"][\"temperature\"]",
+						"units": "°C",
+						"min_value": 15,
+						"max_value": 30
+					}
+				},
+				{
+					"type": "gauge",
+					"settings": {
+						"title": "Humidity",
+						"value": "datasources[\"weatherhub-newest-average\"][\"humidity\"]",
+						"units": "%",
+						"min_value": 0,
+						"max_value": 100
+					}
+				}
+			]
+		}
+	],
+	"datasources": [
+		{
+			"name": "hdo",
+			"type": "JSON",
+			"settings": {
+				"url": "http://192.168.0.105:5000/prehdo/today/nt",
+				"use_thingproxy": false,
+				"refresh": 300,
+				"method": "GET",
+				"name": "hdo"
+			}
+		},
+		{
+			"name": "datetime",
+			"type": "JSON",
+			"settings": {
+				"url": "http://192.168.0.105:5005/datetime/nowformatted?format=ddd dd.MM, hh:mm",
+				"use_thingproxy": false,
+				"refresh": 10,
+				"method": "GET",
+				"name": "datetime"
+			}
+		},
+		{
+			"name": "weather-forecast",
+			"type": "JSON",
+			"settings": {
+				"url": "http://192.168.0.105:5010/weather/forecast?latitude=50.09704122828471&longitude=14.364210138987014",
+				"use_thingproxy": false,
+				"refresh": 10,
+				"method": "GET"
+			}
+		},
+		{
+			"name": "weather-current",
+			"type": "JSON",
+			"settings": {
+				"url": "http://192.168.0.105:5010/weather/current?latitude=50.09704122828471&longitude=14.364210138987014",
+				"use_thingproxy": false,
+				"refresh": 150,
+				"method": "GET"
+			}
+		},
+		{
+			"name": "location",
+			"type": "JSON",
+			"settings": {
+				"url": "http://192.168.0.105:5015/location/reverse?latitude=50.09700012207031&longitude=14.3641996383667",
+				"use_thingproxy": false,
+				"refresh": 60,
+				"method": "GET"
+			}
+		},
+		{
+			"name": "system-network",
+			"type": "JSON",
+			"settings": {
+				"url": "http://192.168.0.105:5020/system/network?iface=enp0s25",
+				"use_thingproxy": false,
+				"refresh": 600,
+				"method": "GET",
+				"name": "system-network"
+			}
+		},
+		{
+			"name": "system-updates",
+			"type": "JSON",
+			"settings": {
+				"url": "http://192.168.0.105:5020/system/updates",
+				"use_thingproxy": false,
+				"refresh": 300,
+				"method": "GET",
+				"name": "system-updates"
+			}
+		},
+		{
+			"name": "system-usage",
+			"type": "JSON",
+			"settings": {
+				"url": "http://192.168.0.105:5020/system/usage?fs=/dev/sda1",
+				"use_thingproxy": false,
+				"refresh": 10,
+				"method": "GET",
+				"name": "system-usage"
+			}
+		},
+		{
+			"name": "sermon-allok",
+			"type": "JSON",
+			"settings": {
+				"url": "http://192.168.0.105:5555/sermon/allok",
+				"use_thingproxy": false,
+				"refresh": 5,
+				"method": "GET",
+				"name": "sermon-allok"
+			}
+		},
+		{
+			"name": "weatherhub-newest",
+			"type": "JSON",
+			"settings": {
+				"url": "http://192.168.0.105:5025/weatherhub/newest?deviceId=11731C3B3419",
+				"use_thingproxy": false,
+				"refresh": 60,
+				"method": "GET",
+				"name": "weatherhub-newest"
+			}
+		},
+		{
+			"name": "weatherhub-newest-average",
+			"type": "JSON",
+			"settings": {
+				"url": "http://192.168.0.105:5025/weatherhub/newest/averages?deviceId=11731C3B3419&outdoorSensorIds=1",
+				"use_thingproxy": true,
+				"refresh": 60,
+				"method": "GET",
+				"name": "weatherhub-newest-average"
+			}
+		}
+	],
+	"columns": 4
+}
